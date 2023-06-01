@@ -15,8 +15,8 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <img src="/vite.svg" alt="Logo" className="h-8 w-8" />
-          <a href="#" className="text-2xl font-bold" style={gradientStyle}>
-            Pala-Mate
+          <a href="#" className="text-2xl font-bold text-sm">
+            PM
           </a>
         </div>
         <div>

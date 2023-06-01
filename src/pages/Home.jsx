@@ -16,8 +16,8 @@ const Home = () => {
 
     return (
         <div className="flex flex-row">
-            <div className="w-1/4"><Sidebar sidebarLinks={sidebarLinks}/></div>
-            <div className="w-3/4"><Outlet /></div>
+            <div className=""><Sidebar sidebarLinks={sidebarLinks}/></div>
+            <div className="w-7/8 flex justify-center"><Outlet /></div>
         </div>
     );
 }

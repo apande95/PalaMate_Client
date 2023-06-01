@@ -25,7 +25,7 @@ const Players = () => {
 
 
     return (
-        <div className="w-3/4">
+        <div className="">
     <div className="flex justify-start flex-col items-center">
       <section className="m-4">
         <input
@@ -39,11 +39,16 @@ const Players = () => {
           Search
         </button>
       </section>
-      {players ? (
+      <>{players ? (
         <div className="overflow-x-auto">
-          <table className="table table-zebra w-full">
+          <table className="table w-full">
             <thead>
               <tr>
+                <th>
+                  <label>
+                    <input type="checkbox" className="checkbox" />
+                  </label>
+                </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Player Name
                 </th>
@@ -64,9 +69,16 @@ const Players = () => {
             <tbody className="divide-y">
               {players.map((player) => (
                 <tr>
-                  <Link to={`/home/player/${player.player_id}`} key={player.player_id} className="table-link">
-                  <td className="btn">{player.player_name || "Unknown"}</td>
+                  <th>
+                    <label>
+                      <input type="checkbox" className="checkbox" />
+                    </label>
+                  </th>
+                  <td className="">
+                  <Link to={`/home/player/${player.player_id}`} key={player.player_id} className="btn">
+                    {player.player_name || "Unknown"}
                   </Link>
+                    </td>
                   <td>{player.username}</td>
                   <td>{player.portal_id}</td>
                   <td>{player.privacy}</td>
@@ -77,7 +89,7 @@ const Players = () => {
         </div>
       ) : (
         loading && <div><Spinner /></div>
-      )}
+      )}</>
     </div>
   </div>
     );
